@@ -34,15 +34,21 @@ unfullscreen.onclick = function() {
 function render(i){
     setTimeout(function(){
         circles[i - 1].style.opacity = 0;
-        circles[i - 1].style.left = Math.random() * 1280 + 'px'
-        circles[i - 1].style.top = Math.random() * 930 + 'px'
         circles[i - 1].style.display = "block";
+        circles[i - 1].style.zIndex = i + 2;
         circles[i - 1].style.transition = "opacity " + AR / 10 +"s ease-in-out";
         outerCircles[i - 1].style.transition = 'transform ' + AR / 10 + "s linear"
         setTimeout(()=>{
-            accessable = true;
+            circles[i - 1].style.left = Math.random() * 1280 + 'px'
+            circles[i - 1].style.top = Math.random() * 930 + 'px'
             circles[i - 1].style.opacity = 1;
             outerCircles[i - 1].style.transform = 'scale(0.5)';
+            setTimeout(()=> {
+                if (circles[i - 1].style.opacity > 0) {
+                    circles[i - 1].style.opacity = 0;
+                    circles[i - 1].style.transition = 'opacity ' + 0.1 + "s linear";
+                }
+            }, 1000)
         }, (94000 - (i * 1000)) * (hardness / 10))
     }, 0)
 
