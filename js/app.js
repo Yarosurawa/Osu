@@ -47,6 +47,7 @@ function render(i){
                 if (circles[i - 1].style.opacity > 0) {
                     circles[i - 1].style.opacity = 0;
                     circles[i - 1].style.transition = 'opacity ' + 0.1 + "s linear";
+                    setTimeout(function(){circles[i - 1].parentNode.removeChild(circles[i - 1])}, 100) 
                 }
             }, 1000)
         }, (94000 - (i * 1000)) * (hardness / 10))
@@ -58,6 +59,7 @@ function render(i){
             circles[i - 1].style.transition = 'opacity ' + 0.1 + "s linear";
             outerCircles[i - 1].style.transition = 'transform ' + 0.1 + "s ease-in-out";
             outerCircles[i - 1].style.transform = 'scale(1.01)';
+            setTimeout(function(){circles[i - 1].parentNode.removeChild(circles[i - 1])}, 100) 
         }
     }
 
