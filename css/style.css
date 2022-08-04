@@ -8,6 +8,10 @@ body {
     background-color:#06000e;
 }
 
+:root {
+    --size: 100px;
+}
+
 .border {
     position: absolute;
     left: calc(50% - (1400px / 2) - 10px);
@@ -59,9 +63,6 @@ body {
     padding: 0;
 }
 
-:root {
-    --size: 100px;
-}
 
 #circle {
     display: none;
@@ -101,16 +102,6 @@ body {
 }
 
 .circle90 {
-    left: calc(50% - (var(--size) + 12px));
-    top: calc(50% - (var(--size) + 12px));
-}
-
-.circle89 {
-    left: 25%;
-    top: 80%;
-}
-
-.circle88 {
-    left: 90%;
-    top: 30%;
+    left: 1280px;
+    top: 930px;
 }

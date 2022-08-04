@@ -34,6 +34,8 @@ unfullscreen.onclick = function() {
 function render(i){
     setTimeout(function(){
         circles[i - 1].style.opacity = 0;
+        circles[i - 1].style.left = Math.random() * 1280 + 'px'
+        circles[i - 1].style.top = Math.random() * 930 + 'px'
         circles[i - 1].style.display = "block";
         circles[i - 1].style.transition = "opacity " + AR / 10 +"s ease-in-out";
         outerCircles[i - 1].style.transition = 'transform ' + AR / 10 + "s linear"
@@ -74,7 +76,7 @@ function render(i){
 
 let count = 90
 function callback() {requestAnimationFrame(function (){
-    if(count > 86) {
+    if(count > 0) {
         console.log(count);
     render(count)
     count--;
