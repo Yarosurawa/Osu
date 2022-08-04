@@ -54,7 +54,7 @@ function render(i){
     }, 0)
 
     function act() {
-        if (circles[i - 1].style.opacity > 0) {
+        if (circles[i - 1].style.opacity != 0) {
             circles[i - 1].style.opacity = 0;
             circles[i - 1].style.transition = 'opacity ' + 0.1 + "s linear";
             outerCircles[i - 1].style.transition = 'transform ' + 0.1 + "s ease-in-out";
@@ -85,7 +85,6 @@ function render(i){
 let count = 90
 function callback() {requestAnimationFrame(function (){
     if(count > 0) {
-        console.log(count);
     render(count)
     count--;
     callback()
