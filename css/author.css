@@ -14,3 +14,10 @@ h2 {
     opacity: 0.03;
     line-height: 0;
 }
+
+a {
+    font-size: 90px;
+    margin-top: -90px;
+    line-height: 0%;
+    font-weight: 800;
+}
