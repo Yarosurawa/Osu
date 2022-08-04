@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600;700;800&display=swap');
+* {
+    text-align: center;
+    font-family: "Dosis", sans-serif;
+}
+
+h1 {
+    font-size: 120px;
+    line-height: 200px;
+}
+
+h2 {
+    font-size: 60px;
+    opacity: 0.03;
+    line-height: 0;
+}
