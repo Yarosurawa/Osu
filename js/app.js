@@ -5,12 +5,14 @@ const restartBtn = document.getElementById('restart-btn')
 const fullscreen = document.getElementById('fullscreen');
 const unfullscreen = document.getElementById('unfullscreen');
 const scoreh1 = document.getElementById('scoreh1');
+const comboh1 = document.getElementById('comboh1')
 const body = document.querySelector('body');
 let fullAccess = true;
 let unFullAccess = false;
 let AR = 5;
 let hardness = 6;
 let score = 0;
+let combo = 0;
 
 fullscreen.onclick = function() {
     if (fullAccess) {
@@ -48,6 +50,8 @@ function render(i){
             outerCircles[i - 1].style.transform = 'scale(0.5)';
             setTimeout(()=> {
                 if (circles[i - 1].style.opacity > 0) {
+                    combo = 0;
+                    comboh1.textContent = '';
                     circles[i - 1].style.opacity = 0;
                     circles[i - 1].style.transition = 'opacity ' + 0.1 + "s linear";
                     setTimeout(function(){circles[i - 1].parentNode.removeChild(circles[i - 1])}, 100) 
@@ -59,6 +63,13 @@ function render(i){
     function act() {
         if (circles[i - 1].style.opacity != 0) {
             score = score + 1;
+            combo = combo + 1;
+            setTimeout(() => {
+                if (combo > 1) {
+                    comboh1.style.opacity = 3;  
+                    comboh1.textContent = combo + 'x'
+                }
+            })
             setTimeout( scoreh1.textContent = score, 5)
             circles[i - 1].style.opacity = 0;
             circles[i - 1].style.transition = 'opacity ' + 0.1 + "s linear";
@@ -90,6 +101,7 @@ function render(i){
 let count = 90
 function callback() {
     scoreh1.style.display = "block";
+    comboh1.style.display = "block";
     requestAnimationFrame(function (){
         if(count > 0) {
             render(count)
