@@ -150,3 +150,32 @@ body {
     margin: 10px;
     font-size: 70px;
 }
+
+/* ---------------------------------------------------------------------------------------------- */
+
+#resultBoard {
+    position: relative;
+    background: linear-gradient(#6f00ff 50%, #af00ff 150%);
+    left: calc(((1400px - 800px) / 2) - 20px);
+    top: 7px;
+    width: 800px;
+    height: 1000px;
+    z-index: 9999999999999999;
+    border: 20px groove #5000b8;
+    border-radius: 50px;
+    transition: transform 2s ease-in-out;
+    top: -1200px;
+}
+
+#resultScore {
+    font-family: "Dosis", sans-serif;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 350px;
+}
+
+#resultCombo {
+    font-family: "Dosis", sans-serif;
+    font-size: 60px;
+    text-align: center;
+}

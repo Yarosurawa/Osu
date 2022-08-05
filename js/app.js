@@ -5,14 +5,23 @@ const restartBtn = document.getElementById('restart-btn')
 const fullscreen = document.getElementById('fullscreen');
 const unfullscreen = document.getElementById('unfullscreen');
 const scoreh1 = document.getElementById('scoreh1');
-const comboh1 = document.getElementById('comboh1')
+const comboh1 = document.getElementById('comboh1');
+const resultBoard = document.getElementById('resultBoard');
+const resultScore = document.getElementById('resultScore');
+const resultCombo = document.getElementById('resultCombo');
 const body = document.querySelector('body');
 let fullAccess = true;
 let unFullAccess = false;
 let AR = 5;
-let hardness = 6;
+let hardness = 1;
 let score = 0;
 let combo = 0;
+
+function end() {
+    resultScore.textContent += score;
+    resultCombo.textContent += combo;
+    resultBoard.style.transform = "translateY(1200px)"
+}
 
 fullscreen.onclick = function() {
     if (fullAccess) {
@@ -54,7 +63,10 @@ function render(i){
                     comboh1.textContent = '';
                     circles[i - 1].style.opacity = 0;
                     circles[i - 1].style.transition = 'opacity ' + 0.1 + "s linear";
-                    setTimeout(function(){circles[i - 1].parentNode.removeChild(circles[i - 1])}, 100) 
+                    setTimeout(function(){circles[i - 1].parentNode.removeChild(circles[i - 1])}, 100)
+                    if (i == 1) {
+                        end()
+                    } 
                 }
             }, 1000)
         }, (94000 - (i * 1000)) * (hardness / 10))
@@ -76,6 +88,9 @@ function render(i){
             outerCircles[i - 1].style.transition = 'transform ' + 0.1 + "s ease-in-out";
             outerCircles[i - 1].style.transform = 'scale(1.01)';
             setTimeout(function(){circles[i - 1].parentNode.removeChild(circles[i - 1])}, 100) 
+            if (i == 1) {
+                end()
+            } 
         }
     }
 
@@ -109,6 +124,7 @@ function callback() {
             callback()
         } 
 })}
+
 
 restartBtn.onclick = function() {
    document.location.reload(); 
