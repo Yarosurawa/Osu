@@ -1,6 +1,6 @@
 const circles = document.getElementsByClassName('circles');
 const outerCircles = document.getElementsByClassName('outerCircle');
-const btn = document.getElementById('btn');
+const startBtn = document.getElementById('start-btn');
 const fullscreen = document.getElementById('fullscreen');
 const unfullscreen = document.getElementById('unfullscreen');
 const body = document.querySelector('body');
@@ -93,7 +93,7 @@ function callback() {requestAnimationFrame(function (){
     }
 })}
 
-btn.onclick = function(){
+startBtn.onclick = function(){
     btn.style.opacity = 0;
     callback();
 };
