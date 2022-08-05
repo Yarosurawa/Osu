@@ -13,7 +13,7 @@ const body = document.querySelector('body');
 let fullAccess = true;
 let unFullAccess = false;
 let AR = 5;
-let hardness = 1;
+let hardness = 6;
 let score = 0;
 let combo = 0;
 
