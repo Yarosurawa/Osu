@@ -1,6 +1,7 @@
 const circles = document.getElementsByClassName('circles');
 const outerCircles = document.getElementsByClassName('outerCircle');
 const startBtn = document.getElementById('start-btn');
+const restartBtn = document.getElementById('restart-btn')
 const fullscreen = document.getElementById('fullscreen');
 const unfullscreen = document.getElementById('unfullscreen');
 const body = document.querySelector('body');
@@ -83,17 +84,21 @@ function render(i){
 }
 
 let count = 90
-function callback() {requestAnimationFrame(function (){
-    if(count > 0) {
-    render(count)
-    count--;
-    callback()
-    } else {
-        return
-    }
+function callback() {
+    requestAnimationFrame(function (){
+        if(count > 0) {
+            render(count)
+            count--;
+            callback()
+        }
 })}
 
+
+restartBtn.onclick = function() {
+   document.location.reload(); 
+}
+
 startBtn.onclick = function(){
-    btn.style.opacity = 0;
+    startBtn.style.opacity = 0;
     callback();
 };

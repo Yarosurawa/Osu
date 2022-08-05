@@ -33,7 +33,7 @@ body {
     display: none;
 }
 
-#btn {
+.btn {
     position: absolute;
     width: 400px;
     height: 70px;
@@ -53,9 +53,15 @@ body {
 }
 
 #restart-btn {
-    display: none;
-    cursor: cell;
+    width: 70px;
+    height: 600px;
     z-index: -2;
+    left: -120px;
+    top: 214.5px;
+}
+
+#restart-btn  img {
+    filter: invert(100%);
 }
 
 #btn:active {
