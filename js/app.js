@@ -4,11 +4,13 @@ const startBtn = document.getElementById('start-btn');
 const restartBtn = document.getElementById('restart-btn')
 const fullscreen = document.getElementById('fullscreen');
 const unfullscreen = document.getElementById('unfullscreen');
+const scoreh1 = document.getElementById('scoreh1');
 const body = document.querySelector('body');
 let fullAccess = true;
 let unFullAccess = false;
 let AR = 5;
 let hardness = 6;
+let score = 0;
 
 fullscreen.onclick = function() {
     if (fullAccess) {
@@ -56,6 +58,8 @@ function render(i){
 
     function act() {
         if (circles[i - 1].style.opacity != 0) {
+            score = score + 1;
+            setTimeout( scoreh1.textContent = score, 5)
             circles[i - 1].style.opacity = 0;
             circles[i - 1].style.transition = 'opacity ' + 0.1 + "s linear";
             outerCircles[i - 1].style.transition = 'transform ' + 0.1 + "s ease-in-out";
@@ -85,14 +89,14 @@ function render(i){
 
 let count = 90
 function callback() {
+    scoreh1.style.display = "block";
     requestAnimationFrame(function (){
         if(count > 0) {
             render(count)
             count--;
             callback()
-        }
+        } 
 })}
-
 
 restartBtn.onclick = function() {
    document.location.reload(); 
@@ -100,5 +104,7 @@ restartBtn.onclick = function() {
 
 startBtn.onclick = function(){
     startBtn.style.opacity = 0;
+    setTimeout(function(){scoreh1.style.opacity = 0.03;}, 200)  
     callback();
+    setTimeout(function(){circles[i - 1].parentNode.removeChild(circles[i - 1])}, 100)   
 };
