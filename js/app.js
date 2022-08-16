@@ -12,8 +12,8 @@ const resultCombo = document.getElementById('resultCombo');
 const body = document.querySelector('body');
 let fullAccess = true;
 let unFullAccess = false;
-let AR = 5;
-let hardness = 6;
+let AR = 6;
+let hardness = 8;
 let score = 0;
 let combo = 0;
 
@@ -56,7 +56,7 @@ function render(i){
             circles[i - 1].style.left = Math.random() * 1280 + 'px'
             circles[i - 1].style.top = Math.random() * 930 + 'px'
             circles[i - 1].style.opacity = 1;
-            outerCircles[i - 1].style.transform = 'scale(0.5)';
+            outerCircles[i - 1].style.transform = 'scale(0.49)';
             setTimeout(()=> {
                 if (circles[i - 1].style.opacity > 0) {
                     combo = 0;

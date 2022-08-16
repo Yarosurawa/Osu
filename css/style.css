@@ -114,8 +114,9 @@ body {
     transition: transform 1s linear;
     width: calc((var(--size) + 12px) * 2);
     height: calc((var(--size) + 12px) * 2);
-    left: calc(((var(--size) / 1.6) + 5px) * -1);
-    top: calc(((var(--size) / 1.5917) + 5px) * -1);
+    left: calc((((var(--size) / 1.6) + 5px) - 0.3px) * -1);
+    top: calc((((var(--size) / 1.5917) + 5px) - 0.25px) * -1);
+    translate: 0.5px 0.5px;
 }
 
 .circle90 {
